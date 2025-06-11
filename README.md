@@ -2,18 +2,21 @@
 
 <br>
 
-Diese Repo enthält eine einfache Spring-Boot-Anwendung, die nur zwei Seiten mit statischem Content ausliefert.
+Diese Repo enthält eine einfache Spring-Boot-Anwendung, die nur
+[zwei Seiten mit statischem Content](src/main/resources/static/inhalt) ausliefert.
 Es werden zwei Instanzen dieser Spring-Boot-Anwendung gestartet, nämlich auf den Ports `8080` und `8081`.
-Ein vorgeschalteter *Load Balancer* (nginx) verteilt die auf Port `8000` eingehenden Requests zwischen
+Ein vorgeschalteter *Load Balancer* (nginx) verteilt die auf Port `8000` eingehenden HTTP-Anfragen zwischen
 den beiden Spring-Boot-Instanzen.
 
 Der von der Spring-Boot-Anwendung ausgelieferte statische Content ist mit *Spring Web Security* geschützt,
 so dass der Nutzer nur darauf zugreifen kann, wenn er im vorgeschalteten HTML-Formular Nutzername und
-Passwort eingibt (siehe Methode `nutzerLaden` in Klasse `Sicherheitskonfiguration` für Nutzername und Passwort).
+Passwort eingibt (siehe Methode `nutzerLaden()` in der
+Klasse [Sicherheitskonfiguration](src/main/java/de/eldecker/spring/redisdemo/Sicherheitskonfiguration.java)
+für Nutzername und Passwort).
 Wenn der Nutzer sich erfolgreich authentifziert hat, dann wird dies in der HTTP-Sitzung gespeichert, für welche
 im Browser das Cookie `JSESSIONID` angelegt wird.
 
-Damit der Nutzer sich nicht neu authentifizieren muss, wenn einer seiner Folge-Requests auf die andere
+Damit der Nutzer sich nicht neu authentifizieren muss, wenn einer seiner Folge-Anfrage auf die andere
 der beiden Instanzen der Spring-Boot-Anwendung weitergeleitet wird, wird diese Sitzungsinformation über
 die gemeinsame Redis-Instanz geteilt.
 
