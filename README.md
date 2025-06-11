@@ -11,7 +11,7 @@ den beiden Spring-Boot-Instanzen.
 Der von der Spring-Boot-Anwendung ausgelieferte statische Content ist mit *Spring Web Security* geschützt,
 so dass der Nutzer nur darauf zugreifen kann, wenn er im vorgeschalteten HTML-Formular Nutzername und
 Passwort eingibt (siehe Methode `nutzerLaden()` in der
-Klasse [Sicherheitskonfiguration](src/main/java/de/eldecker/spring/redisdemo/Sicherheitskonfiguration.java)
+Klasse [Sicherheitskonfiguration](src/main/java/de/eldecker/spring/redisdemo/Sicherheitskonfiguration.java#L56)
 für Nutzername und Passwort).
 Wenn der Nutzer sich erfolgreich authentifziert hat, dann wird dies in der HTTP-Sitzung gespeichert, für welche
 im Browser das Cookie `JSESSIONID` angelegt wird.
