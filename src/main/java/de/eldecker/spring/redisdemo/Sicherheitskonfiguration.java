@@ -1,6 +1,5 @@
 package de.eldecker.spring.redisdemo;
 
-import static java.util.stream.Collectors.toList;
 import static org.springframework.security.crypto.factory.PasswordEncoderFactories.createDelegatingPasswordEncoder;
 import static org.springframework.security.web.util.matcher.AntPathRequestMatcher.antMatcher;
 
@@ -26,8 +25,8 @@ public class Sicherheitskonfiguration {
     private static final String ROLLE_NUTZER = "nutzer";
 
     /** Array mit Pfaden, auf die auch ohne Authentifizierung zugegriffen werden kann. */
-    private final static AntPathRequestMatcher[] OEFFENTLICHE_PFADE_ARRAY = { antMatcher( "/index.html"      ),
-                                                                              antMatcher( "/redis-styles.css")
+	private final static AntPathRequestMatcher[] OEFFENTLICHE_PFADE_ARRAY = { antMatcher( "/index.html"      ),
+                                                                              antMatcher( "/redis-style.css")
                                                                             };
     
     @Bean
@@ -49,7 +48,7 @@ public class Sicherheitskonfiguration {
     
     
     /**
-     * Nutzernamen mit Passwörtern definieren (werden aus Datenbank geladen).
+     * Nutzernamen mit Passwörtern definieren.
      *
      * @return Objekt mit allen Nutzernamen und Passwörtern
      */
@@ -57,20 +56,18 @@ public class Sicherheitskonfiguration {
     public InMemoryUserDetailsManager nutzerLaden() {
 
         final PasswordEncoder passwordEncoder = createDelegatingPasswordEncoder();
-        // Beispielwert Passwort "g3h3im" nach Kodierung: {bcrypt}$2a$10$/KqHJ.PNBaEV4hX2Y4hmDeANEPqJcz4./VoLp1H66DQ
-        
 
-        UserDetails nutzer1 = User.withUsername( "alice" )
-                                  .password( passwordEncoder.encode( "g3h3im" ) )
-                                  .roles( ROLLE_NUTZER )
-                                  .build();
+        final UserDetails nutzer1 = User.withUsername( "alice" )
+                                        .password( passwordEncoder.encode( "g3h3im" ) )
+                                        .roles( ROLLE_NUTZER )
+                                        .build();
         
-        UserDetails nutzer2 = User.withUsername( "bob" )
-                                  .password( passwordEncoder.encode( "s3cr3t" ) )
-                                  .roles( ROLLE_NUTZER )
-                                  .build();        
+        final UserDetails nutzer2 = User.withUsername( "bob" )
+                                        .password( passwordEncoder.encode( "s3cr3t" ) )
+                                        .roles( ROLLE_NUTZER )
+                                        .build();        
 
-        List<UserDetails> userDetailsList = List.of( nutzer1, nutzer2 );
+        final List<UserDetails> userDetailsList = List.of( nutzer1, nutzer2 );
         
         return new InMemoryUserDetailsManager( userDetailsList );
     }    
