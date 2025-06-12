@@ -50,7 +50,7 @@ del mein_key_1
 
 <br>
 
-Abfrage Persistierungs-Strategie von Redis-Instanz (RDB und/oder AOF, sie auch [hier](https://redis.io/docs/latest/operate/oss_and_stack/management/persistence/):
+Abfrage Persistierungs-Strategie von Redis-Instanz (RDB und/oder AOF, siehe auch [hier](https://redis.io/docs/latest/operate/oss_and_stack/management/persistence/)):
 
 * Abfrage RDB (Redis Database, "Snapshotting"): `config get save`
 * Abfrage AOF (Apend-Only File)               : `config get appendonly`
