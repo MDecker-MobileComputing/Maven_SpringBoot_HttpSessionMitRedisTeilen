@@ -4,7 +4,7 @@
 
 Vor dem ersten Start der Docker-Container mit `docker-compose up` muss auf einem Rechner
 einmal das Image mit dem *Load Balancer* erstellt werden, siehe Unterordner
-[LoadBalancer](LoadBalancer/)
+[LoadBalancer](LoadBalancer/).
 
 <br>
 

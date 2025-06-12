@@ -12,7 +12,7 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
  * https://docs.spring.io/spring-session/reference/guides/boot-redis.html
  */
 @SpringBootApplication
-@EnableRedisHttpSession
+//@EnableRedisHttpSession
 public class RedisDemoApplication {
 
 	public static void main( String[] args ) {

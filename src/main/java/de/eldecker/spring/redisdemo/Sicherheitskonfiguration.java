@@ -28,9 +28,18 @@ public class Sicherheitskonfiguration {
 	private final static AntPathRequestMatcher[] OEFFENTLICHE_PFADE_ARRAY = { antMatcher( "/index.html"      ),
                                                                               antMatcher( "/redis-style.css")
                                                                             };
-    
+
+	/**
+	 * Sicherheitskonfiguration für Web-Zugriff erstellen.
+	 * 
+	 * @param http Ausgangsobjekt für Erstellung Sicherheitskonfiguration
+	 * 
+	 * @return Sicherheitskonfiguration
+	 * 
+	 * @throws Exception Fehler aufgetreten
+	 */
     @Bean
-    public SecurityFilterChain httpKonfiguration(HttpSecurity http) throws Exception {
+    public SecurityFilterChain httpKonfiguration( HttpSecurity http ) throws Exception {
 
         return http.csrf( (csrf) -> csrf.disable() )
                    .authorizeHttpRequests( auth -> auth.requestMatchers( OEFFENTLICHE_PFADE_ARRAY ).permitAll()
