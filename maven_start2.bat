@@ -1,2 +1,2 @@
 
-mvn spring-boot:run -Dspring-boot.run.arguments="--server.port=8081"
+mvnw clean spring-boot:run -Dspring-boot.run.arguments="--server.port=8081"
