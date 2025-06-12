@@ -17,6 +17,11 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 
+/**
+ * Sicherheitskonfiguration: die statischen Dateien unter dem Pfad {@code inhalt}
+ * sollen nur an über Nutzername und Passwort authentifizierte Nutzer ausgeliefert
+ * werden.
+ */
 @Configuration
 @EnableWebSecurity
 public class Sicherheitskonfiguration {
