@@ -24,6 +24,6 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: RedisDemo_FatJar
-        path: target/passwortgrab-*-SNAPSHOT.jar
+        path: target/redisdemo-*-SNAPSHOT.jar
         if-no-files-found: error
         retention-days: 3
