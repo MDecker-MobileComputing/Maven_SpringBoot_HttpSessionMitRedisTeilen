@@ -65,9 +65,9 @@ Beispielausgabe für RDB:
 
 Erklärung:
 ```
-3600 1   → Speichere die Datenbank, wenn sich mindestens 1 Key innerhalb von 3600 Sekunden (1 Stunde) geändert hat
-300 100  → Speichere, wenn sich mindestens 100 Keys innerhalb von 300 Sekunden (5 Minuten) geändert haben
-60 10000 → Speichere, wenn sich mindestens 10.000 Keys innerhalb von 60 Sekunden (1 Minute) geändert haben
+3600 1   → Speichere die Datenbank, wenn sich mindestens      1 Key  innerhalb von 3.600 Sekunden (1 Stunde)  geändert hat
+300 100  → Speichere die Datenbank, wenn sich mindestens    100 Keys innerhalb von   300 Sekunden (5 Minuten) geändert haben
+60 10000 → Speichere die Datenbank, wenn sich mindestens 10.000 Keys innerhalb von    60 Sekunden (1 Minute)  geändert haben
 ```
 Vorübergehend ausschalten (bis Server neu gestartet wird): `CONFIG SET save ""`
 
