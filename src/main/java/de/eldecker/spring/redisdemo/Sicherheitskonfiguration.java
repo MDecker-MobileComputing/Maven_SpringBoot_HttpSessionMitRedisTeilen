@@ -26,7 +26,7 @@ public class Sicherheitskonfiguration {
 
     /** Array mit Pfaden, auf die auch ohne Authentifizierung zugegriffen werden kann. */
 	private final static AntPathRequestMatcher[] OEFFENTLICHE_PFADE_ARRAY = { antMatcher( "/index.html"      ),
-                                                                              antMatcher( "/redis-style.css")
+                                                                              antMatcher( "/redis-style.css" )
                                                                             };
 
 	/**
