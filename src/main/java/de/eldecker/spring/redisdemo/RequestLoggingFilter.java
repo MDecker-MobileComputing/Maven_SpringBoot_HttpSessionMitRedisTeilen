@@ -16,9 +16,9 @@ import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * Klasse, um jeden einzelnen HTTP-Request für statische Ressourcen
- * (den nur solche liefert die Anwendung aus) auf einen Logger zu schreiben,
- * damit man sieht, dass der <i>Load Balancer</i> die Requests auf mehrere
- * Instanzen verteilt.
+ * (denn nur solche liefert die Anwendung aus) auf einen Logger zu 
+ * schreiben, damit man sieht, dass der <i>Load Balancer</i> die 
+ * Requests auf mehrere Instanzen verteilt.
  */
 @Component
 public class RequestLoggingFilter extends OncePerRequestFilter {
@@ -27,7 +27,7 @@ public class RequestLoggingFilter extends OncePerRequestFilter {
 	
 	
 	/**
-	 * Methode schreibt für jeden Request eine Nachricht auf dne Logger.
+	 * Methode schreibt für jeden Request eine Nachricht auf den Logger.
 	 * 
 	 * Beispiel für Log-Nachricht:
 	 * <pre>
@@ -40,7 +40,9 @@ public class RequestLoggingFilter extends OncePerRequestFilter {
                                      FilterChain filterChain )
             throws ServletException, IOException {
 
-    	LOG.info( "HTTP-Request erhalten: {} {}", request.getMethod(), request.getRequestURI() );
+    	LOG.info( "HTTP-Request erhalten: {} {}", 
+    			  request.getMethod(), 
+    			  request.getRequestURI() );
     	
         filterChain.doFilter( request, response );
     }
