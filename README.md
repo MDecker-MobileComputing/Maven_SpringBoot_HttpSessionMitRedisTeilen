@@ -35,9 +35,9 @@ die gemeinsame Redis-Instanz geteilt.
 
 <br>
 
-* Docker-Image mit *Load Balancer* bauen, siehe [dieser Ordner](DockerCompose-Redis/LoadBalancer)
+* Docker-Image mit *Load Balancer* bauen, siehe [dieser Ordner](DockerCompose-Redis/LoadBalancer).
 
-* Container mit Redis und *Load Balancer* starten, siehe [dieser Ordner](DockerCompose-Redis/)
+* Container mit Redis und *Load Balancer* starten, siehe [dieser Ordner](DockerCompose-Redis/).
 
 * Die beiden Instanzen der Spring-Boot-Anwendung mit `maven_start1.bat` und `maven_start2.bat` starten.
 
