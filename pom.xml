@@ -19,6 +19,7 @@
 
     <name>Redis-Demo</name>
     <description>Demo HTTP-Session über Redis teilen</description>
+    <inceptionYear>2025</inceptionYear>
 
     <properties>
         <java.version>21</java.version>
